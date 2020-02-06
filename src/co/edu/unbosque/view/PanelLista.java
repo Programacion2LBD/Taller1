@@ -1,4 +1,4 @@
-package co.edu.unbosque.view;
+package co.edu.unbosque.View;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
