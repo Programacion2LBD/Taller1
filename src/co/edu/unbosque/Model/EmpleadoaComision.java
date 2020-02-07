@@ -29,8 +29,7 @@ public class EmpleadoaComision extends Empleado implements Serializable {
 			else if (nventas<=0) {
 				salarioaComision = salarioaComision;
 				
-				
-			
+							
 			
 		}
 		
