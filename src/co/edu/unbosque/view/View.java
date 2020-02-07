@@ -1,5 +1,7 @@
 package co.edu.unbosque.View;
 
+import co.edu.unbosque.Model.Empresa;
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,10 +12,10 @@ import javax.swing.JOptionPane;
 
 public class View extends JFrame implements ActionListener {
 	
-	PanelLista pl;
-	PanelInformacion pi;
-	PanelTitulo pt;
-	PanelBotones pb;
+	private PanelLista pl;
+	private PanelInformacion pi;
+	private PanelTitulo pt;
+	private PanelBotones pb;
 	
 	public View() {
 		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/logo.png")).getImage());
@@ -53,4 +55,19 @@ public class View extends JFrame implements ActionListener {
 
 	}
 
+	public PanelLista getPl() {
+		return pl;
+	}
+
+	public PanelInformacion getPi() {
+		return pi;
+	}
+
+	public PanelTitulo getPt() {
+		return pt;
+	}
+
+	public PanelBotones getPb() {
+		return pb;
+	}
 }

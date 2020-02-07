@@ -1,18 +1,21 @@
 package co.edu.unbosque.Controller;
 
 import co.edu.unbosque.Model.*;
+import co.edu.unbosque.Persistence.File;
 import co.edu.unbosque.View.View;
-
-import java.util.ArrayList;
 
 public class Controlador {
 
-  View v;
-  Empresa e;
+  private View v;
+  private Empresa e;
 
   public Controlador(){
-    v = new View();
     e = new Empresa();
+    v = new View();
+    for (Empleado e : e.getListaEmpleados()){
+      v.getPl().getModeloLista().addElement(e.getCedula());
+    }
+    v.getPl().getListaPersonal().setModel(v.getPl().getModeloLista());
   }
 
   public int buscarEmpleado(String cedula){
@@ -55,6 +58,7 @@ public class Controlador {
         case 7: emp = new Nivel5(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso); break;
       }
       e.getListaEmpleados().add(emp);
+      File.escribiraArchivo(e.getListaEmpleados());
       return true;
     } else {
       return false;
