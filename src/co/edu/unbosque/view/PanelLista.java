@@ -28,4 +28,11 @@ public class PanelLista extends JPanel {
 
 	}
 
+	public JList<String> getListaPersonal() {
+		return listaPersonal;
+	}
+
+	public DefaultListModel<String> getModeloLista() {
+		return modeloLista;
+	}
 }
