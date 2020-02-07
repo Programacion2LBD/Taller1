@@ -13,7 +13,6 @@ public class PanelInformacion extends JPanel {
 	JTextArea informacion;
 	JButton modificar;
 	JButton eliminar;
-	View vp;
 	PanelLista pl;
 
 	public PanelInformacion() {
