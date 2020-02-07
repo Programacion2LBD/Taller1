@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0f07a1cb-4f3c-40e7-ac3c-96bf94566ad2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/View/VentanaNiveles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/View/VentanaNiveles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/view/VentanaNiveles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/view/VentanaNiveles.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/co/edu/unbosque/Controller/Lanzador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            <state relative-caret-position="153">
+              <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/co/edu/unbosque/View/VentanaNiveles.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            <state relative-caret-position="22">
+              <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -106,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/src/co/edu/unbosque/Model/EmpleadoaComision.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
             </state>
           </provider>
         </entry>
@@ -247,7 +247,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581118494110" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581118634314" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -304,7 +304,7 @@
       <workItem from="1580930601804" duration="2230000" />
       <workItem from="1580951135599" duration="1179000" />
       <workItem from="1581024929421" duration="11323000" />
-      <workItem from="1581108146723" duration="6862000" />
+      <workItem from="1581108146723" duration="7000000" />
     </task>
     <task id="LOCAL-00001" summary="Se agregan los empleados a la lista visual">
       <created>1581110841215</created>
@@ -317,7 +317,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21594000" />
+    <option name="totallyTimeSpent" value="21732000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -483,7 +483,7 @@
     <entry file="file://$PROJECT_DIR$/src/co/edu/unbosque/Model/EmpleadoaComision.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
         </state>
       </provider>
     </entry>
@@ -529,8 +529,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/co/edu/unbosque/Controller/Lanzador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        <state relative-caret-position="153">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -586,8 +586,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/co/edu/unbosque/View/VentanaNiveles.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state relative-caret-position="22">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
         </state>
       </provider>
     </entry>

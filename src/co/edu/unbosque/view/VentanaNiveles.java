@@ -26,14 +26,18 @@ public class VentanaNiveles extends JFrame implements ActionListener {
 
     botones = new JPanel();
 
-    botones.setLayout(new GridLayout(1,2));
+    botones.setLayout(new GridLayout(1,5));
     setLayout(null);
     setSize(510, 300);
 
     add(titulo);
     titulo.setBounds(150,0,510,50);
     botones.add(boton1);
-    botones.add(botonSenior);
+    botones.add(boton2);
+    botones.add(boton3);
+    botones.add(boton4);
+    botones.add(boton5);
+
     add(botones);
     botones.setBounds(0,50,510,220);
     setLocationRelativeTo(null);
