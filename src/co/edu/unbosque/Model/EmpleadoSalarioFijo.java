@@ -1,10 +1,13 @@
 package co.edu.unbosque.Model;
 
-public abstract class EmpleadoSalarioFijo extends Empleado{
+import java.io.Serializable;
+import java.time.Year;
+
+public abstract class EmpleadoSalarioFijo extends Empleado implements Serializable {
 	/**
 	 * 
 	 */
-	final int salarioBase=3500000;
+	static final int salarioBase=3500000;
 	int añoDeTrabajo;
 	/**
 	 * 
@@ -16,15 +19,13 @@ public abstract class EmpleadoSalarioFijo extends Empleado{
 	 * @param correoElectronico
 	 * @param direccion
 	 * @param añoIngreso
-	 * @param salarioBase
-	 * @param añoDeTrabajo
 	 */
 	public EmpleadoSalarioFijo(String nombre, String apellido, String cedula, char genero, long telefono,
-			String correoElectronico, String direccion, int añoIngreso, int salarioBase, int añoDeTrabajo) {
+			String correoElectronico, String direccion, int añoIngreso) {
 		super(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso);
 	
-	this.añoDeTrabajo=añoDeTrabajo;
-	
+	this.	añoDeTrabajo = Integer.parseInt(Year.parse("2020").minusYears(añoIngreso).toString());
+
 	}
 	
 	public abstract double calcularSalario();

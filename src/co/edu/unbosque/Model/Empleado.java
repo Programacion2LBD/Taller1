@@ -1,6 +1,8 @@
 package co.edu.unbosque.Model;
 
-public abstract class Empleado  {
+import java.io.Serializable;
+
+public abstract class Empleado implements Serializable {
 	/**
 	 * 
 	 */
