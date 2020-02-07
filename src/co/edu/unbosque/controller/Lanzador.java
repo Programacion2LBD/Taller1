@@ -6,9 +6,7 @@ import co.edu.unbosque.View.View;
 public class Lanzador {
 	public static void main(String[] args) {
 
-		//Controlador c = new Controlador();
-		VentanaJuniorSenior v= new VentanaJuniorSenior();
-		v.setVisible(true);
+		Controlador c = new Controlador();
 	}
 
 }
