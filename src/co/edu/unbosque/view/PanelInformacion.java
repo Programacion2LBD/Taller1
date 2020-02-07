@@ -1,4 +1,4 @@
-package co.edu.unbosque.view;
+package co.edu.unbosque.View;
 
 import java.awt.Color;
 import javax.swing.BorderFactory;
@@ -13,7 +13,6 @@ public class PanelInformacion extends JPanel {
 	JTextArea informacion;
 	JButton modificar;
 	JButton eliminar;
-	View vp;
 	PanelLista pl;
 
 	public PanelInformacion() {

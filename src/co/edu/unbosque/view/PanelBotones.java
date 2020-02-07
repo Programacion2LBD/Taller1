@@ -1,4 +1,4 @@
-package co.edu.unbosque.view;
+package co.edu.unbosque.View;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -10,7 +10,6 @@ public class PanelBotones extends JPanel {
 	JButton agregar;
 	JButton agregarventa;
 	JButton aumentar;
-	View vp;
 
 	public PanelBotones() {
 		setLayout(null);
