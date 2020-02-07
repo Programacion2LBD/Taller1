@@ -5,15 +5,14 @@ public class Nivel3 extends IngenieroJunior {
 	final double porcentual= 0.05;
 
 	public Nivel3(String nombre, String apellido, String cedula, char genero, long telefono, String correoElectronico,
-			String direccion, int añoIngreso, int salarioBase, int añoDeTrabajo, int pnVentas) {
-		super(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso, salarioBase, añoDeTrabajo,
-				pnVentas);
+			String direccion, int añoIngreso,  int añoDeTrabajo) {
+		super(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso, añoDeTrabajo);
 	}
 
 	@Override
 	public double calcularSalario() {
-		// TODO Auto-generated method stub
-		return 0;
+		double salarioNivel3= salarioBase + salarioBase * porcentual;
+		return salarioNivel3;
 	}
 
 	public int getSalarioBase() {

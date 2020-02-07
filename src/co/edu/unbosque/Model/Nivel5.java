@@ -6,16 +6,15 @@ public class Nivel5 extends IngenieroJunior{
 
 
 	public Nivel5(String nombre, String apellido, String cedula, char genero, long telefono, String correoElectronico,
-			String direccion, int añoIngreso, int salarioBase, int añoDeTrabajo, int pnVentas) {
-		super(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso, salarioBase, añoDeTrabajo,
-				pnVentas);
+			String direccion, int añoIngreso,  int añoDeTrabajo) {
+		super(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso, añoDeTrabajo);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public double calcularSalario() {
-		// TODO Auto-generated method stub
-		return 0;
+		double salarioNivel5= salarioBase +salarioBase *porcentual;
+		return salarioNivel5;
 	}
 
 	public int getSalarioBase() {

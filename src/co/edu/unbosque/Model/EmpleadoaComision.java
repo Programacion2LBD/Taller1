@@ -1,16 +1,14 @@
 package co.edu.unbosque.Model;
 
 public class EmpleadoaComision extends Empleado{
-	int salarioBase;
 	int nventas;
-	int salarioMinimo;
+	int salarioMinimo=800000;
+	int salarioBase=1100000;
 
 	public EmpleadoaComision(String nombre, String apellido, String cedula, char genero, long telefono,
-			String correoElectronico, String direccion, int añoIngreso,  int psalarioBase,int pnventas,int psalarioMinimo) {
+			String correoElectronico, String direccion, int añoIngreso,int psalarioMinimo) {
 		super(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso);
 	
-		salarioBase = psalarioBase;
-		nventas = pnventas;
 		salarioMinimo = psalarioMinimo;
 		
 				
@@ -22,7 +20,13 @@ public class EmpleadoaComision extends Empleado{
 
 	@Override
 	public double calcularSalario() {
-		return 0;
+		double salarioaComision= salarioBase;
+		return salarioaComision;
+
+			
+		
+
+		
 	}
 
 
