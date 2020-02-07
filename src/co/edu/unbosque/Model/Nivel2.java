@@ -1,14 +1,16 @@
 package co.edu.unbosque.Model;
 
-public class Nivel2 extends IngenieroJunior {
+import java.io.Serializable;
+
+public class Nivel2 extends IngenieroJunior implements Serializable {
 	final int salarioBase=3500000;
 	final double porcentual= 0.05;
 	
 	
 
 	public Nivel2(String nombre, String apellido, String cedula, char genero, long telefono, String correoElectronico,
-			String direccion, int añoIngreso, int añoDeTrabajo) {
-		super(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso, añoDeTrabajo);
+			String direccion, int añoIngreso) {
+		super(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso);
 	}
 
 	@Override

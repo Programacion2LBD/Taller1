@@ -1,19 +1,18 @@
 package co.edu.unbosque.Model;
 
-public class EmpleadoaComision extends Empleado{
-	int nventas;
-	int salarioMinimo=800000;
-	int salarioBase=1100000;
 
+import java.io.Serializable;
+
+public class EmpleadoaComision extends Empleado implements Serializable {
+	private int nventas;
+	private static final int salarioBase = 3500000;
+
+	
 	public EmpleadoaComision(String nombre, String apellido, String cedula, char genero, long telefono,
-			String correoElectronico, String direccion, int añoIngreso,int psalarioMinimo) {
+			String correoElectronico, String direccion, int añoIngreso) {
 		super(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso);
-	
-		salarioMinimo = psalarioMinimo;
-		
-				
-	
-	
+
+		nventas = 0;
 	
 	}
 	
@@ -30,14 +29,6 @@ public class EmpleadoaComision extends Empleado{
 	}
 
 
-	public int getSalarioBase() {
-		return salarioBase;
-	}
-
-
-	public void setSalarioBase(int salarioBase) {
-		this.salarioBase = salarioBase;
-	}
 
 
 	public int getNventas() {
@@ -49,15 +40,6 @@ public class EmpleadoaComision extends Empleado{
 		this.nventas = nventas;
 	}
 
-
-	public int getSalarioMinimo() {
-		return salarioMinimo;
-	}
-
-
-	public void setSalarioMinimo(int salarioMinimo) {
-		this.salarioMinimo = salarioMinimo;
-	}
 	
 
 }

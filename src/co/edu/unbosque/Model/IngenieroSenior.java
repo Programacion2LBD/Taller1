@@ -1,17 +1,21 @@
 package co.edu.unbosque.Model;
 
-public class IngenieroSenior extends EmpleadoSalarioFijo{
+import java.io.Serializable;
+import java.time.Year;
+
+public class IngenieroSenior extends EmpleadoSalarioFijo implements Serializable {
 	int nVentas;
 	static final int salarioBase=3500000;
 
 
 	
 	public IngenieroSenior(String nombre, String apellido, String cedula, char genero, long telefono,
-			String correoElectronico, String direccion, int añoIngreso, int añoDeTrabajo) {
-		super(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso, añoDeTrabajo);
 
-	
-	
+			String correoElectronico, String direccion, int añoIngreso) {
+		super(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso);
+
+	nVentas = 0;
+
 	}
 
 
