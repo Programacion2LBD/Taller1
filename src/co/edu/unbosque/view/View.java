@@ -56,10 +56,7 @@ public class View extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getActionCommand().equals("agregar")){
 			va.setVisible(true);
-			
-			
 		}
-
 	}
 
 	public PanelLista getPl() {
