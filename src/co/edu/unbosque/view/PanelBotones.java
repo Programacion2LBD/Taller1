@@ -10,7 +10,6 @@ public class PanelBotones extends JPanel {
 	JButton agregar;
 	JButton agregarventa;
 	JButton aumentar;
-	View vp;
 
 	public PanelBotones() {
 		setLayout(null);

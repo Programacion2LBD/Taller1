@@ -16,7 +16,8 @@ public class View extends JFrame implements ActionListener {
 	private PanelInformacion pi;
 	private PanelTitulo pt;
 	private PanelBotones pb;
-	
+	private VentanaAgregar va;
+
 	public View() {
 		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/logo.png")).getImage());
 		setTitle("UNIVERSIDAD EL BOSQUE");
@@ -31,6 +32,7 @@ public class View extends JFrame implements ActionListener {
 		pi= new PanelInformacion();
 		pb = new PanelBotones();
 		pt = new PanelTitulo();
+		va= new VentanaAgregar();
 
 		pl.setBackground(Color.white);
 		add(pl).setBounds(10, 220, 340, 350);
@@ -52,6 +54,11 @@ public class View extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		if(e.getActionCommand().equals("agregar")){
+			va.setVisible(true);
+			
+			
+		}
 
 	}
 

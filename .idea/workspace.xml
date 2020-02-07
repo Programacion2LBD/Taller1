@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f07a1cb-4f3c-40e7-ac3c-96bf94566ad2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/co/edu/unbosque/view/VentanaJuniorSenior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Imagenes/fondo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/co/edu/unbosque/view/PanelBotones.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/co/edu/unbosque/view/PanelBotones.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/co/edu/unbosque/view/PanelInformacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/co/edu/unbosque/view/PanelInformacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/co/edu/unbosque/view/PanelLista.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/co/edu/unbosque/view/PanelLista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/co/edu/unbosque/view/PanelTitulo.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/co/edu/unbosque/view/PanelTitulo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/co/edu/unbosque/view/VentanaAgregar.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/co/edu/unbosque/view/VentanaAgregar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/co/edu/unbosque/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/co/edu/unbosque/view/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/Model/EmpleadoaComision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/Model/EmpleadoaComision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/view/PanelBotones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/view/PanelBotones.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/view/PanelInformacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/view/PanelInformacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/view/PanelLista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/view/PanelLista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/view/VentanaAgregar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/view/VentanaAgregar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/view/View.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,13 +57,28 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/co/edu/unbosque/View/VentanaJuniorSenior.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="256">
               <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/co/edu/unbosque/View/PanelLista.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+              <folding>
+                <element signature="e#1066#1067#0" expanded="true" />
+                <element signature="e#1093#1094#0" expanded="true" />
+                <element signature="e#1146#1147#0" expanded="true" />
+                <element signature="e#1171#1172#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/co/edu/unbosque/View/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="52" selection-start-line="52" selection-end-line="55" selection-end-column="3" />
+            <state relative-caret-position="85">
+              <caret line="54" selection-start-line="60" selection-start-column="5" selection-end-line="62" selection-end-column="3" />
               <folding>
                 <element signature="e#1402#1403#0" expanded="true" />
                 <element signature="e#1418#1419#0" expanded="true" />
@@ -92,7 +119,7 @@
         <entry file="file://$PROJECT_DIR$/src/co/edu/unbosque/Model/EmpleadoaComision.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -156,11 +183,11 @@
         <option value="$PROJECT_DIR$/src/co/edu/unbosque/Model/Nivel4.java" />
         <option value="$PROJECT_DIR$/src/co/edu/unbosque/Model/EmpleadoaComision.java" />
         <option value="$PROJECT_DIR$/src/co/edu/unbosque/Model/Nivel5.java" />
-        <option value="$PROJECT_DIR$/src/co/edu/unbosque/View/PanelLista.java" />
         <option value="$PROJECT_DIR$/src/co/edu/unbosque/View/View.java" />
         <option value="$PROJECT_DIR$/src/co/edu/unbosque/Controller/Controlador.java" />
         <option value="$PROJECT_DIR$/src/co/edu/unbosque/Controller/Lanzador.java" />
         <option value="$PROJECT_DIR$/src/co/edu/unbosque/View/VentanaJuniorSenior.java" />
+        <option value="$PROJECT_DIR$/src/co/edu/unbosque/View/PanelLista.java" />
       </list>
     </option>
   </component>
@@ -231,7 +258,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581116852376" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581117651758" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -283,7 +310,7 @@
       <workItem from="1580930601804" duration="2230000" />
       <workItem from="1580951135599" duration="1179000" />
       <workItem from="1581024929421" duration="11323000" />
-      <workItem from="1581108146723" duration="5418000" />
+      <workItem from="1581108146723" duration="6021000" />
     </task>
     <task id="LOCAL-00001" summary="Se agregan los empleados a la lista visual">
       <created>1581110841215</created>
@@ -296,13 +323,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20150000" />
+    <option name="totallyTimeSpent" value="20753000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -312,7 +339,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -462,7 +489,7 @@
     <entry file="file://$PROJECT_DIR$/src/co/edu/unbosque/Model/EmpleadoaComision.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
@@ -496,22 +523,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/co/edu/unbosque/View/PanelLista.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-          <folding>
-            <element signature="e#1093#1094#0" expanded="true" />
-            <element signature="e#1146#1147#0" expanded="true" />
-            <element signature="e#1171#1172#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/co/edu/unbosque/View/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="52" selection-start-line="52" selection-end-line="55" selection-end-column="3" />
+        <state relative-caret-position="85">
+          <caret line="54" selection-start-line="60" selection-start-column="5" selection-end-line="62" selection-end-column="3" />
           <folding>
             <element signature="e#1402#1403#0" expanded="true" />
             <element signature="e#1418#1419#0" expanded="true" />
@@ -551,6 +566,19 @@
           <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/co/edu/unbosque/View/PanelLista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+          <folding>
+            <element signature="e#1066#1067#0" expanded="true" />
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1146#1147#0" expanded="true" />
+            <element signature="e#1171#1172#0" expanded="true" />
           </folding>
         </state>
       </provider>
