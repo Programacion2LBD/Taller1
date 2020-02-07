@@ -5,7 +5,9 @@ import java.io.Serializable;
 
 public class EmpleadoaComision extends Empleado implements Serializable {
 	private int nventas;
-	private static final int salarioBase = 3500000;
+	private static final int salarioBase = 1100000;
+	int minimo=800000;
+	
 
 	
 	public EmpleadoaComision(String nombre, String apellido, String cedula, char genero, long telefono,
@@ -20,7 +22,23 @@ public class EmpleadoaComision extends Empleado implements Serializable {
 	@Override
 	public double calcularSalario() {
 		double salarioaComision= salarioBase;
+		if(nventas >=1) {
+			salarioaComision = salarioaComision + minimo;
+		}
+			
+			else if (nventas<=0) {
+				salarioaComision = salarioaComision;
+				
+				
+			
+			
+		}
+		
+		
+		
+		
 		return salarioaComision;
+		
 
 			
 		
