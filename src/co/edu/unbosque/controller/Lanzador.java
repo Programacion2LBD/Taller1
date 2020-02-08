@@ -1,6 +1,5 @@
 package co.edu.unbosque.Controller;
 
-import co.edu.unbosque.View.VentanaJuniorSenior;
 import co.edu.unbosque.View.View;
 
 public class Lanzador {
@@ -8,5 +7,4 @@ public class Lanzador {
 
 		Controlador c = new Controlador();
 	}
-
 }

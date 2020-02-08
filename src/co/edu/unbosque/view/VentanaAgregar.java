@@ -3,19 +3,22 @@ package co.edu.unbosque.View;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.Label;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
-import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class VentanaAgregar extends JFrame {
+import co.edu.unbosque.Controller.Controlador;
+
+public class VentanaAgregar extends JFrame  implements ActionListener{
 
 	private JButton agregar;
 
@@ -50,8 +53,11 @@ public class VentanaAgregar extends JFrame {
 
 	private JLabel direccion;
 	private JTextField direccion_;
-
-	public VentanaAgregar() {
+	private Controlador c;
+	private int opcion;
+	
+	public VentanaAgregar(Controlador c) {
+		this.c=c;
 		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/logo.png")).getImage());
 		setTitle("AGREGAR EMPLEADO");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -118,7 +124,7 @@ public class VentanaAgregar extends JFrame {
 		correo_.setHorizontalAlignment(SwingConstants.CENTER);
 
 		agregar = new JButton("AGREGAR");
-		agregar.setActionCommand("agregar");
+		agregar.addActionListener(this);
 
 		add(nombre).setBounds(20, 220, 120, 50);
 		add(nombre_).setBounds(180, 230, 230, 30);
@@ -242,6 +248,36 @@ public class VentanaAgregar extends JFrame {
 
 	public void setCorreo_(JTextField correo_) {
 		this.correo_ = correo_;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String comando = e.getActionCommand();
+		
+		if (comando.equals("AGREGAR")) {
+			
+			if (nombre_.getText().isEmpty() || apellidos_.getText().isEmpty() || iden_.getText().isEmpty()
+					|| correo.getText().isEmpty() || genero.getText().isEmpty() || telefono_.getText().isEmpty() || correo_.getText().isEmpty() || fecha_ingreso.getText().isEmpty() || direccion_.getText().isEmpty() ) {
+			
+				JOptionPane.showMessageDialog(null,
+						"Debes agregar todos los valores solicitados para agregar un nuevo empleado",
+						"Mensaje de Sistema", JOptionPane.ERROR_MESSAGE);
+			}else { 
+				if(c.agregarEmpleado(nombre_.getText(), apellidos_.getText() , iden_.getText(), genero.getText().charAt(0) , Long.parseLong(telefono_.getText()) , correo_.getText() , direccion_.getText(), Integer.parseInt(fecha_ingreso.getText()) , opcion )){
+					JOptionPane.showMessageDialog(null, "Se ha registrado el empleo con la cedula: " + iden_.getText() ,
+							" Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+					setVisible(false);
+				}
+			}
+		} 
+	}
+
+	public int getOpcion() {
+		return opcion;
+	}
+
+	public void setOpcion(int opcion) {
+		this.opcion = opcion;
 	}
 
 }

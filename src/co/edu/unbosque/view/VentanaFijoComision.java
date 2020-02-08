@@ -12,10 +12,12 @@ public class VentanaFijoComision extends JFrame implements ActionListener {
   private JLabel titulo;
   private JPanel botones;
 
-  public VentanaFijoComision()  {
+  public VentanaFijoComision(ActionListener action)  {
     titulo = new JLabel("ELIGE EL TIPO DE SALARIO DEL EMPLEADO");
     botonComision = new JButton("A COMISION");
+    botonComision.addActionListener(action);
     botonFijo = new JButton("SALARIO FIJO");
+    botonFijo.addActionListener(action);
     botones = new JPanel();
 
     botones.setLayout(new GridLayout(1,2));

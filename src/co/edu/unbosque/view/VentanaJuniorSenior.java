@@ -12,10 +12,12 @@ public class VentanaJuniorSenior extends JFrame implements ActionListener {
   private JLabel titulo;
   private JPanel botones;
 
-  public VentanaJuniorSenior()  {
+  public VentanaJuniorSenior(ActionListener action)  {
     titulo = new JLabel("ELIGE EL TIPO DE EMPLEADO");
-    botonJunior = new JButton("Junior");
-    botonSenior = new JButton("Senior");
+    botonJunior = new JButton("JUNIOR");
+    botonJunior.addActionListener(action);
+    botonSenior = new JButton("SENIOR");
+    botonSenior.addActionListener(action);
     botones = new JPanel();
 
     botones.setLayout(new GridLayout(1,2));
