@@ -42,7 +42,6 @@ public class VentanaJuniorSenior extends JFrame {
 		botonSenior.setFont(fuente);
 		botonSenior.setBorderPainted(false);
 
-		setLayout(null);
 
 		add(titulo).setBounds(120, 0, 510, 100);
 		add(botonJunior).setBounds(60, 100, 150, 90);

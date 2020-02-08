@@ -14,6 +14,25 @@ public class Nivel3 extends IngenieroJunior implements Serializable {
 	@Override
 	public double calcularSalario() {
 		double salarioNivel3= salarioBase + salarioBase * porcentual;
+		if(getAñoDeTrabajo()< 2 ) {
+			salarioNivel3=salarioNivel3;
+		}
+		else	if (getAñoDeTrabajo() >= 2 && getAñoDeTrabajo()<3) {
+			salarioNivel3 = salarioNivel3 + (salarioNivel3*0.05);
+
+		}
+		else	if (getAñoDeTrabajo() >=4 && getAñoDeTrabajo() <7) {
+			salarioNivel3 =salarioNivel3 + (salarioNivel3*0.10);
+
+		}
+		else	if (getAñoDeTrabajo() >= 8 && getAñoDeTrabajo() <15) {
+
+			salarioNivel3 = salarioNivel3 +(salarioNivel3*0.15);
+		}
+		else if(getAñoDeTrabajo() >= 15) {
+
+			salarioNivel3 = salarioNivel3 +(salarioNivel3*0.20);
+		}
 		return salarioNivel3;
 	}
 
@@ -27,6 +46,5 @@ public class Nivel3 extends IngenieroJunior implements Serializable {
 	
 	@Override
 	public String toString() {
-		return  "\nnombre:" + getNombre() + ", \napellido:" + getApellido() +", \ncedula:" + getCedula() +", \ngenero:" + getGenero() +", \ntelefono:" +getTelefono() +", \ncorreoElectronico:" + getCorreoElectronico() + ", \ndireccion:" + getDireccion() + ", \nañoIngreso:" + getAñoIngreso() + ",\nsalarioBase:" + salarioBase + ", \nporcentual:" + porcentual + "]"; 
-	}
+		return "Nivel3  \nnombre:" + getNombre() + ", \napellido:" + getApellido() +", \ncedula:" + getCedula() +", \ngenero:" + getGenero() +", \ntelefono:" +getTelefono() +", \ncorreoElectronico:" + getCorreoElectronico() + ", \ndireccion:" + getDireccion() + ", \nañoIngreso:" + getAñoIngreso() + "\nSalario" + getSalario();	}
 }

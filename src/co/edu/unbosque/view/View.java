@@ -76,7 +76,6 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 		int opcion;
 		if (e.getActionCommand().equals("AGREGAR")) {
 			vfc.setVisible(true);
-
 			va.getNombre_().setText("");
 			va.getApellidos_().setText("");
 			va.getiden_().setText("");
@@ -141,7 +140,9 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 
 		} else if (e.getActionCommand().equals("AUMENTAR SALARIO")) {
 			String cedula = pl.getListaPersonal().getSelectedValue();
-			c.leerEmpleado(cedula).calcularSalario();
+			c.leerEmpleado(cedula).setSalario(c.leerEmpleado(cedula).calcularSalario());
+			pi.getInformacion().setText(c.leerEmpleado(cedula).toString());
+
 		} else if (e.getActionCommand().equals("AGREGAR VENTA")) {
 			String cedula = pl.getListaPersonal().getSelectedValue();
 			if (c.leerEmpleado(cedula) instanceof EmpleadoaComision) {
