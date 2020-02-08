@@ -265,19 +265,18 @@ public class VentanaAgregar extends JFrame implements ActionListener {
 		String comando = e.getActionCommand();
 
 		if (comando.equals("AGREGAR")) {
-
 			if (nombre_.getText().isEmpty() || apellidos_.getText().isEmpty() || iden_.getText().isEmpty()
 					|| correo.getText().isEmpty() || genero.getText().isEmpty() || telefono_.getText().isEmpty()
 					|| correo_.getText().isEmpty() || fecha_ingreso.getText().isEmpty()
 					|| direccion_.getText().isEmpty()) {
 
 				JOptionPane.showMessageDialog(null,
-
 						"DEBES AGREGAR TODOS LOS VALORES SOLICITADOS PARA AGREGAR UN NUEVO EMPLEADO", "IMPORTANTE",
 						JOptionPane.ERROR_MESSAGE, icono);
 			} else {
+				char genero = generosSeleccion.getSelection().getActionCommand().equals("Hombre")? 'H':'M';
 				if (c.agregarEmpleado(nombre_.getText(), apellidos_.getText(), iden_.getText(),
-						genero.getText().charAt(0), Long.parseLong(telefono_.getText()), correo_.getText(),
+						genero, Long.parseLong(telefono_.getText()), correo_.getText(),
 						direccion_.getText(), Integer.parseInt(fecha_ingreso.getText()), opcion)) {
 					JOptionPane.showMessageDialog(null, "SE HA REGISTRADO EL EMPLEO CON LA CEDULA: " + iden_.getText(),
 							" OPERACION EXITOSA", JOptionPane.INFORMATION_MESSAGE, icono);

@@ -44,8 +44,8 @@ public class IngenieroSenior extends EmpleadoSalarioFijo implements Serializable
 	 *  este metodo accede al atributo numero de ventas del empleado para modificarlo
 	 * <b>pre</b> modificar el numero de ventas del empleado 
 	 * <b>post</b> actualizar el numero de ventas  del empleado .
-	 * @param numero de ventas es el  numero de ventas   del nuevo empleado.numero de ventas != null, numero de ventas !" ".
-	 */
+	 * @param nVentas de ventas es el  numero de ventas   del nuevo empleado.numero de ventas != null, numero de ventas !" ".
+	 **/
 
 
 
@@ -79,7 +79,7 @@ public class IngenieroSenior extends EmpleadoSalarioFijo implements Serializable
 
 	@Override
 	public String toString() {
-		return "IngenieroSenior [ \nnombre:" + getNombre() + ", \napellido:" + getApellido() +", \ncedula:" + getCedula() +", \ngenero:" + getGenero() +", \ntelefono:" +getTelefono() +", \ncorreoElectronico:" + getCorreoElectronico() + ", \ndireccion:" + getDireccion() + ", \nañoIngreso:" + getAñoIngreso() +",\nVentas:" + nVentas + "\nSalario: " + getSalario();
+		return "Ingeniero Senior  \nnombre:" + getNombre() + ", \napellido:" + getApellido() +", \ncedula:" + getCedula() +", \ngenero:" + getGenero() +", \ntelefono:" +getTelefono() +", \ncorreoElectronico:" + getCorreoElectronico() + ", \ndireccion:" + getDireccion() + ", \nañoIngreso:" + getAñoIngreso() +",\nVentas:" + nVentas + "\nSalario: " + getSalario();
 	}
 	
 	

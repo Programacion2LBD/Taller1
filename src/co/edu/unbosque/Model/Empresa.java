@@ -14,7 +14,7 @@ public class Empresa {
   /**
    * se crea un lista de tipo empleado 
    * <b>pre</b>existe la clase empledos
-   * <b>post<b> existe una lista de empleados 
+   * <b>post</b> existe una lista de empleados
    * return lista empleados
    * 
    */
@@ -36,7 +36,7 @@ public class Empresa {
    *   este metodo accede al atributo lista empleados para modificarlo
 	 * <b>pre</b> modificar el vector de tipo empleado 
 	 * <b>post</b> actualizar el vector de tipo  empleado .
-	 * @param empleado. un objeto de tipo empleado.
+	 * @param listaEmpleados un objeto de tipo empleado.
 	 
    */
 	public void setListaEmpleados(ArrayList<Empleado> listaEmpleados) {
