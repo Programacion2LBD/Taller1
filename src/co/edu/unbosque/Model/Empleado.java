@@ -1,6 +1,8 @@
 package co.edu.unbosque.Model;
 
+import javax.swing.*;
 import java.io.Serializable;
+import java.time.Year;
 
 public abstract class Empleado implements Serializable {
 	/**
@@ -14,6 +16,7 @@ public abstract class Empleado implements Serializable {
 	private String correoElectronico;
 	private String direccion;
 	private int añoIngreso;
+	private double salario;
 	/**
 	 * 
 	 * @param nombre
@@ -37,8 +40,13 @@ public abstract class Empleado implements Serializable {
 		this.correoElectronico = correoElectronico;
 		this.direccion = direccion;
 		this.añoIngreso = añoIngreso;
-		
-		
+		salario = calcularSalario();
+
+		try{
+			verificarInvariante();
+		} catch (AssertionError e){
+			JOptionPane.showMessageDialog(null, e.getMessage());
+		}
 		
 	}
 	/**
@@ -46,6 +54,17 @@ public abstract class Empleado implements Serializable {
 	 * @return
 	 */
 	public abstract double calcularSalario();
+
+	public void verificarInvariante(){
+		assert (nombre!=null): "Por favor ingrese un nombre";
+		assert (apellido!=null): "Por favor ingrese un apellido";
+		assert (cedula!= null): "Por favor ingrese una cedula";
+		assert (genero!=' '):"Por favor seleccione un genero";
+		assert (telefono>Long.parseLong("3000000000")): "Por favor ingrese un numero valido";
+		assert (correoElectronico.contains("@")): "El correo debe contener un arroba";
+		assert (direccion!=null):"Por favor ingrese una direcicon";
+		assert (añoIngreso>1950 && añoIngreso< 2020): "El año de ingreso debe ser mayor a 1950 y menor a 2020";
+	}
 
 	/**
 	 * 
