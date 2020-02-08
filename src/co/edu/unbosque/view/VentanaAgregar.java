@@ -101,9 +101,11 @@ public class VentanaAgregar extends JFrame  implements ActionListener{
 		mujer = new JLabel("MUJER");
 		mujer.setFont(fuente);
 		mujer_ = new JRadioButton();
+		mujer_.setActionCommand("Mujer");
 		hombre = new JLabel("HOMBRE");
 		hombre.setFont(fuente);
 		hombre_ = new JRadioButton();
+		hombre_.setActionCommand("Hombre");
 		generosSeleccion.add(hombre_);
 		generosSeleccion.add(mujer_);
 
@@ -270,7 +272,8 @@ public class VentanaAgregar extends JFrame  implements ActionListener{
 						"Debes agregar todos los valores solicitados para agregar un nuevo empleado",
 						"Mensaje de Sistema", JOptionPane.ERROR_MESSAGE);
 			}else { 
-				if(c.agregarEmpleado(nombre_.getText(), apellidos_.getText() , iden_.getText(), genero.getText().charAt(0) , Long.parseLong(telefono_.getText()) , correo_.getText() , direccion_.getText(), Integer.parseInt(fecha_ingreso.getText()) , opcion )){
+				if(c.agregarEmpleado(nombre_.getText(), apellidos_.getText() , iden_.getText(), generosSeleccion.getSelection().getActionCommand().equals("Hombre")? 'H':'M' , Long.parseLong(telefono_.getText()) , correo_.getText() , direccion_.getText(), Integer.parseInt(fecha_ingreso.getText()) , opcion )){
+
 					JOptionPane.showMessageDialog(null, "Se ha registrado el empleo con la cedula: " + iden_.getText() ,
 							" Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
 					setVisible(false);

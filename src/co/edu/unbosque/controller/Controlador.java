@@ -63,12 +63,19 @@ public class Controlador {
         case 6: emp = new Nivel4(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso); break;
         case 7: emp = new Nivel5(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso); break;
       }
-      e.getListaEmpleados().add(emp);
-      File.escribiraArchivo(e.getListaEmpleados());
-      System.out.println("Empleado Creado");
-      v.getPl().getModeloLista().addElement(cedula);
-      v.getPl().getListaPersonal().setModel(v.getPl().getModeloLista());
-      return true;
+      try{
+        emp.verificarInvariante();
+        e.getListaEmpleados().add(emp);
+        File.escribiraArchivo(e.getListaEmpleados());
+        System.out.println("Empleado Creado");
+
+        v.getPl().getModeloLista().addElement(cedula);
+        v.getPl().getListaPersonal().setModel(v.getPl().getModeloLista());
+        return true;
+      } catch (Exception e){
+        JOptionPane.showMessageDialog(null, e.getMessage());
+        return false;
+      }
     } else {
     	JOptionPane.showMessageDialog(v.getVa(), "Ya existe un empleado con esa cedula");
     	return false;
@@ -99,7 +106,9 @@ public class Controlador {
       e.getListaEmpleados().get(pos).setCorreoElectronico(correoElectronico);
       e.getListaEmpleados().get(pos).setDireccion(direccion);
       e.getListaEmpleados().get(pos).setAñoIngreso(añoIngreso);
+      v.getPi().getInformacion().setText(leerEmpleado(v.getPl().getListaPersonal().getSelectedValue()).toString());
       return true;
     }
   }
+
 }

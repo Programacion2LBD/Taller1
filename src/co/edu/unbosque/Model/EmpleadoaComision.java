@@ -78,7 +78,7 @@ public class EmpleadoaComision extends Empleado implements Serializable {
 	 * este metodo accede al atributo numero de ventas que realiza el empleado 
 	 *  <b>pre</b> el numero de ventas es mayor o igual a 0
 	 * <b>post</b> se modifica el numero de ventas .
-	 * @param nVentas es el numero de ventas del nuevo empleado.nVentas != null, nVentas !" ".
+	 * @param nventas es el numero de ventas del nuevo empleado.nVentas != null, nVentas !" ".
 	 */
 
 

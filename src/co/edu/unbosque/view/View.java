@@ -76,8 +76,7 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 		int opcion;
 		if (e.getActionCommand().equals("AGREGAR")) {
 			vfc.setVisible(true);
-			
-			va.setVisible(true);
+
 			va.getNombre_().setText("");
 			va.getApellidos_().setText("");
 			va.getiden_().setText("");
@@ -130,11 +129,14 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 			vn.setVisible(false);
 		} else if (e.getActionCommand().equals("ELIMINAR")) {
 			String cedula = pl.getListaPersonal().getSelectedValue();
-			System.out.println(cedula);
 			if (c.eliminarEmpleado(cedula)) {
-				System.out.println("HERE");
+				System.out.println(pl.getListaPersonal().getSelectedIndex());
 				pl.getModeloLista().remove(pl.getListaPersonal().getSelectedIndex());
+
 				pl.getListaPersonal().ensureIndexIsVisible(pl.getModeloLista().getSize());
+				pl.getListaPersonal().clearSelection();
+				pi.getInformacion().setText("");
+
 			}
 
 		} else if (e.getActionCommand().equals("AUMENTAR SALARIO")) {
@@ -145,10 +147,15 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 			if (c.leerEmpleado(cedula) instanceof EmpleadoaComision) {
 				EmpleadoaComision a = (EmpleadoaComision) c.leerEmpleado(cedula);
 				a.setNventas(a.getNventas() + 1);
+				pi.getInformacion().setText(c.leerEmpleado(cedula).toString());
 			} else if (c.leerEmpleado(cedula) instanceof IngenieroSenior) {
-			IngenieroSenior a = (IngenieroSenior) c.leerEmpleado(cedula);
-			a.setnVentas(a.getnVentas()+1);
-			} 
+				IngenieroSenior a = (IngenieroSenior) c.leerEmpleado(cedula);
+				a.setnVentas(a.getnVentas()+1);
+				pi.getInformacion().setText(c.leerEmpleado(cedula).toString());
+
+			} else {
+				JOptionPane.showMessageDialog(this, "No se pueden agregar ventas a este empleado");
+			}
 		}
 		else if (e.getActionCommand().equals("MODIFICAR")) {
 			Empleado empl = c.leerEmpleado(pl.getListaPersonal().getSelectedValue());
@@ -156,8 +163,8 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 			vm.getNombre_().setText(empl.getNombre());
 			vm.getApellidos_().setText(empl.getApellido());
 			vm.getiden_().setText(empl.getCedula());
-			vm.getHombre_().setSelected(false);
-			vm.getMujer_().setSelected(false);
+			if (empl.getGenero()=='H') vm.getHombre_().setSelected(true);
+			else vm.getMujer_().setSelected(true);
 			vm.getTelefono_().setText(Long.toString(empl.getTelefono()));
 			vm.getCorreo_().setText(empl.getCorreoElectronico());
 			vm.getDireccion_().setText(empl.getDireccion());
@@ -168,8 +175,10 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
 		// TODO Auto-generated method stub
-		String cedula = pl.getListaPersonal().getSelectedValue();
-		pi.getInformacion().setText(c.leerEmpleado(cedula).toString());
+		if (pl.getListaPersonal().getSelectedValue()!=null){
+			String cedula = pl.getListaPersonal().getSelectedValue();
+			pi.getInformacion().setText(c.leerEmpleado(cedula).toString());
+		}
 	}
 
 	public PanelLista getPl() {
