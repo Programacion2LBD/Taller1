@@ -8,7 +8,6 @@ import co.edu.unbosque.Model.IngenieroSenior;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -26,6 +25,7 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 	private VentanaJuniorSenior vjs;
 	private VentanaNiveles vn;
 	private Controlador c;
+	private VentanaModificar vm;
 
 	public View(Controlador c) {
 		this.c=c;
@@ -39,13 +39,14 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 		setLocationRelativeTo(null);
 
 		pl = new PanelLista();
-		pi= new PanelInformacion();
+		pi = new PanelInformacion();
 		pb = new PanelBotones();
 		pt = new PanelTitulo();
 		va= new VentanaAgregar(c);
 		vfc = new VentanaFijoComision(this);
 		vjs = new VentanaJuniorSenior(this);
 		vn = new VentanaNiveles(this);
+		vm = new VentanaModificar();
 
 		pl.setBackground(Color.white);
 		add(pl).setBounds(10, 220, 340, 350);
@@ -55,7 +56,6 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 		add(pt).setBounds(5, 5, 682, 210);
 		pb.setBackground(Color.white);
 		add(pb).setBounds(12, 570, 673, 100);
-	
 
 		pi.getEliminar().addActionListener(this);
 		pi.getModificar().addActionListener(this);
@@ -135,7 +135,11 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 			} else if (c.leerEmpleado(cedula) instanceof IngenieroSenior) {
 			IngenieroSenior a = (IngenieroSenior) c.leerEmpleado(cedula);
 			a.setnVentas(a.getnVentas()+1);
+			} else if (e.getActionCommand().equals("modificar")) {
+				this.setVisible(true);
+				vm.setVisible(true);
 			}
+
 		}
 	}
 	@Override
