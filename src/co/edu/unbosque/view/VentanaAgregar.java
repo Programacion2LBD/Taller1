@@ -152,6 +152,7 @@ public class VentanaAgregar extends JFrame  implements ActionListener{
 
 	}
 
+
 	public ImageIcon getFondo() {
 		return fondo;
 	}
