@@ -17,5 +17,12 @@ public abstract class IngenieroJunior extends EmpleadoSalarioFijo implements Ser
 	
 	public abstract double calcularSalario();
 
+	@Override
+	public String toString() {
+		return "IngenieroJunior \nnombre:" + getNombre() + ", \napellido:" + getApellido() +", \ncedula:" + getCedula() +", \ngenero:" + getGenero() +", \ntelefono:" +getTelefono() +", \ncorreoElectronico:" + getCorreoElectronico() + ", \ndireccion:" + getDireccion() + ", \nañoIngreso:" + getAñoIngreso() + ",\nVentas:" + nVentas + "]";
+	}
+	
+	
+
 
 }

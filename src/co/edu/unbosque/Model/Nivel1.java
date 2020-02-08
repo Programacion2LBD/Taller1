@@ -42,5 +42,10 @@ public class Nivel1 extends IngenieroJunior implements Serializable {
 		return salariofijo;
 	}
 
+	@Override
+	public String toString() {
+		return "Nivel1 [ \nnombre:" + getNombre() + ", \napellido:" + getApellido() +", \ncedula:" + getCedula() +", \ngenero:" + getGenero() +", \ntelefono:" +getTelefono() +", \ncorreoElectronico:" + getCorreoElectronico() + ", \ndireccion:" + getDireccion() + ",\nañoIngreso:" + getAñoIngreso()+ ",\nsalarioBase:" + salarioBase + ", \nporcentual:" + porcentual + "]";
+	}
+
 	
 }

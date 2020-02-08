@@ -1,6 +1,7 @@
 package co.edu.unbosque.View;
 
 import co.edu.unbosque.Controller.Controlador;
+import co.edu.unbosque.Model.Empleado;
 import co.edu.unbosque.Model.EmpleadoaComision;
 import co.edu.unbosque.Model.Empresa;
 import co.edu.unbosque.Model.IngenieroSenior;
@@ -46,7 +47,7 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 		vfc = new VentanaFijoComision(this);
 		vjs = new VentanaJuniorSenior(this);
 		vn = new VentanaNiveles(this);
-		vm = new VentanaModificar();
+		vm = new VentanaModificar(c);
 
 		pl.setBackground(Color.white);
 		add(pl).setBounds(10, 220, 340, 350);
@@ -75,6 +76,16 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 		int opcion;
 		if(e.getActionCommand().equals("AGREGAR")){
 			vfc.setVisible(true);
+			va.setVisible(true);
+			va.getNombre_().setText("");
+			va.getApellidos_().setText("");
+			va.getiden_().setText("");
+			va.getHombre_().setSelected(false);
+			va.getMujer_().setSelected(false);
+			va.getTelefono_().setText("");
+			va.getCorreo_().setText("");
+			va.getDireccion_().setText("");
+			va.getFecha_ingreso().setText("");
 		} else if(e.getActionCommand().equals("A COMISION")){
 			opcion = 1;
 			va.setOpcion(opcion);
@@ -135,11 +146,21 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 			} else if (c.leerEmpleado(cedula) instanceof IngenieroSenior) {
 			IngenieroSenior a = (IngenieroSenior) c.leerEmpleado(cedula);
 			a.setnVentas(a.getnVentas()+1);
-			} else if (e.getActionCommand().equals("modificar")) {
-				this.setVisible(true);
-				vm.setVisible(true);
-			}
-
+			} 
+		}
+		else if (e.getActionCommand().equals("MODIFICAR")) {
+			Empleado empl = c.leerEmpleado(pl.getListaPersonal().getSelectedValue());
+			vm.setVisible(true);
+			vm.getNombre_().setText(empl.getNombre());
+			vm.getApellidos_().setText(empl.getApellido());
+			vm.getiden_().setText(empl.getCedula());
+			vm.getHombre_().setSelected(false);
+			vm.getMujer_().setSelected(false);
+			vm.getTelefono_().setText(Long.toString(empl.getTelefono()));
+			vm.getCorreo_().setText(empl.getCorreoElectronico());
+			vm.getDireccion_().setText(empl.getDireccion());
+			vm.getFecha_ingreso().setText(Integer.toString(empl.getAñoIngreso()));
+			
 		}
 	}
 	@Override

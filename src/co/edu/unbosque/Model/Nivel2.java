@@ -27,6 +27,11 @@ public class Nivel2 extends IngenieroJunior implements Serializable {
 	public double getPorcentual() {
 		return porcentual;
 	}
+
+	@Override
+	public String toString() {
+		return "Nivel2 [ \nnombre:" + getNombre() + ", \napellido:" + getApellido() +", \ncedula:" + getCedula() +", \ngenero:" + getGenero() +", \ntelefono:" +getTelefono() +", \ncorreoElectronico:" + getCorreoElectronico() + ", \ndireccion:" + getDireccion() + ", \nañoIngreso:" + getAñoIngreso() + ",salarioBase=" + salarioBase + ", porcentual=" + porcentual + "]";
+	}
 	
 
 }

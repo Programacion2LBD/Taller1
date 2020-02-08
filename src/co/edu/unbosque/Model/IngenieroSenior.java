@@ -50,6 +50,12 @@ public class IngenieroSenior extends EmpleadoSalarioFijo implements Serializable
 		}
 		return salarosenior;
 	}
+
+
+	@Override
+	public String toString() {
+		return "IngenieroSenior [ \nnombre:" + getNombre() + ", \napellido:" + getApellido() +", \ncedula:" + getCedula() +", \ngenero:" + getGenero() +", \ntelefono:" +getTelefono() +", \ncorreoElectronico:" + getCorreoElectronico() + ", \ndireccion:" + getDireccion() + ", \nañoIngreso:" + getAñoIngreso() +",\nVentas:" + nVentas + "]";
+	}
 	
 	
 
