@@ -21,6 +21,9 @@ import co.edu.unbosque.Controller.Controlador;
 public class VentanaAgregar extends JFrame  implements ActionListener{
 
 	private JButton agregar;
+	
+	private ImageIcon imagen;
+	private JLabel imagen_;
 
 	private ImageIcon fondo;
 	private JLabel fondo_;
@@ -72,6 +75,10 @@ public class VentanaAgregar extends JFrame  implements ActionListener{
 		fondo = new ImageIcon(getClass().getResource("/Imagenes/fondo.png"));
 		ImageIcon newImage = new ImageIcon(fondo.getImage().getScaledInstance(450, 700, Image.SCALE_SMOOTH));
 		fondo_ = new JLabel(newImage);
+		
+		imagen = new ImageIcon(getClass().getResource("/Imagenes/agregarempleado.png"));
+		ImageIcon newImagen = new ImageIcon(imagen.getImage().getScaledInstance(430, 200, Image.SCALE_SMOOTH));
+		imagen_ = new JLabel(newImagen);
 
 		nombre = new JLabel("NOMBRES:");
 		nombre.setFont(fuente);
@@ -146,6 +153,7 @@ public class VentanaAgregar extends JFrame  implements ActionListener{
 		add(direccion).setBounds(20, 530, 200, 50);
 		add(direccion_).setBounds(180, 540, 230, 30);
 		add(agregar).setBounds(160, 635, 130, 30);
+		add(imagen_).setBounds(10, 10, 425, 200);
 		add(fondo_).setBounds(0, 0, 450, 720);
 
 		setVisible(false);
