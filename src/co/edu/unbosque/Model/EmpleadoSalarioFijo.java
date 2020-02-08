@@ -62,7 +62,9 @@ public abstract class EmpleadoSalarioFijo extends Empleado implements Serializab
 		this.añoDeTrabajo = añoDeTrabajo;
 	}
 	/**
-	 * 
+	 *  este metodo accede al atributo salario base  que lleva el empleado 
+	 *  <b>pre</b> el salario base  es mayor a 0
+	 * <b>post</b> se recibio el salario base  .
 	 * @return
 	 */
 	public int getSalarioBase() {

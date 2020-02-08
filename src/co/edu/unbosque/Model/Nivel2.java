@@ -5,6 +5,17 @@ import java.io.Serializable;
 public class Nivel2 extends IngenieroJunior implements Serializable {
 	final int salarioBase=3500000;
 	final double porcentual= 0.05;
+	/**
+	* crea un objeto de tipo ingeniero junior 
+	 * @param nombre =  nombre != null,nombre != " "
+	 * @param apellido = apellido !=null, apellido != " "
+	 * @param cedula = cedula != null , cedula != " "
+	 * @param genero = genero != null , genero != " "
+	 * @param telefono= telefono != null, telefono != " "
+	 * @param correoElectronico = correoElectronico != null, correoElectronico != " "
+	 * @param direccion = direccion ! = null , direcciom != " "
+	 * @param añoIngreso = añoIngreso != null, añoIngreso != " "
+	 */
 	
 	
 

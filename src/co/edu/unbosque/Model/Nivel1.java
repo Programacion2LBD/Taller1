@@ -4,6 +4,19 @@ import java.io.Serializable;
 public class Nivel1 extends IngenieroJunior implements Serializable {
 	final int salarioBase=3500000;
 	final double porcentual= 0.05;
+	/*
+	 * crea un objeto de tipo ingeniero junior 
+	 * @param nombre =  nombre != null,nombre != " "
+	 * @param apellido = apellido !=null, apellido != " "
+	 * @param cedula = cedula != null , cedula != " "
+	 * @param genero = genero != null , genero != " "
+	 * @param telefono= telefono != null, telefono != " "
+	 * @param correoElectronico = correoElectronico != null, correoElectronico != " "
+	 * @param direccion = direccion ! = null , direcciom != " "
+	 * @param añoIngreso = añoIngreso != null, añoIngreso != " "
+	 */
+
+
 	
 
 	public Nivel1(String nombre, String apellido, String cedula, char genero, long telefono, String correoElectronico,
@@ -12,6 +25,13 @@ public class Nivel1 extends IngenieroJunior implements Serializable {
 		super(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso);
 
 	}
+	/**
+	 * este metodo calcula el salario del empleado dependiendo de los años que lleve en la empresa
+	 * <b>pre</b> dependiendo de los años que lleve trabajando
+	 * <b>post</b> arroja el salario dle empleado dependiendo de los años que se encuentre en la empresa 
+	retun salario del empleado 
+	 */
+	
 
 	@Override
 	public double calcularSalario() {
