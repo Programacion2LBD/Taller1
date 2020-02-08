@@ -5,18 +5,17 @@ import co.edu.unbosque.Model.Empresa;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 public class View extends JFrame implements ActionListener {
-	
+
 	private PanelLista pl;
 	private PanelInformacion pi;
 	private PanelTitulo pt;
 	private PanelBotones pb;
 	private VentanaAgregar va;
+	private VentanaModificar vm;
 
 	public View() {
 		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/logo.png")).getImage());
@@ -29,10 +28,11 @@ public class View extends JFrame implements ActionListener {
 		setLocationRelativeTo(null);
 
 		pl = new PanelLista();
-		pi= new PanelInformacion();
+		pi = new PanelInformacion();
 		pb = new PanelBotones();
 		pt = new PanelTitulo();
-		va= new VentanaAgregar();
+		va = new VentanaAgregar();
+		vm = new VentanaModificar();
 
 		pl.setBackground(Color.white);
 		add(pl).setBounds(10, 220, 340, 350);
@@ -42,7 +42,6 @@ public class View extends JFrame implements ActionListener {
 		add(pt).setBounds(5, 5, 682, 210);
 		pb.setBackground(Color.white);
 		add(pb).setBounds(12, 570, 673, 100);
-	
 
 		pi.eliminar.addActionListener(this);
 		pi.modificar.addActionListener(this);
@@ -54,10 +53,14 @@ public class View extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getActionCommand().equals("agregar")){
+		if (e.getActionCommand().equals("agregar")) {
 			va.setVisible(true);
-			
-			
+
+		}
+		if (e.getActionCommand().equals("modificar")) {
+			this.setVisible(true);
+			vm.setVisible(true);
+
 		}
 
 	}

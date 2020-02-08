@@ -3,7 +3,6 @@ package co.edu.unbosque.View;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.Label;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -11,13 +10,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
-import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class VentanaAgregar extends JFrame {
-
-	private JButton agregar;
+public class VentanaModificar extends JFrame{
+	private JButton modificar;
 
 	private ImageIcon fondo;
 	private JLabel fondo_;
@@ -51,9 +48,9 @@ public class VentanaAgregar extends JFrame {
 	private JLabel direccion;
 	private JTextField direccion_;
 
-	public VentanaAgregar() {
+	public VentanaModificar() {
 		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/logo.png")).getImage());
-		setTitle("AGREGAR EMPLEADO");
+		setTitle("MODIFICAR EMPLEADO");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setLayout(null);
 		setResizable(false);
@@ -81,7 +78,7 @@ public class VentanaAgregar extends JFrame {
 		iden.setFont(fuente);
 		iden_ = new JTextField();
 		iden_.setHorizontalAlignment(SwingConstants.CENTER);
-
+		iden_.setEnabled(false);
 		generosSeleccion = new ButtonGroup();
 		genero = new JLabel("GENERO:");
 		genero.setFont(fuente);
@@ -116,8 +113,8 @@ public class VentanaAgregar extends JFrame {
 		correo_ = new JTextField();
 		correo_.setHorizontalAlignment(SwingConstants.CENTER);
 
-		agregar = new JButton("AGREGAR");
-		agregar.setActionCommand("agregar");
+		modificar = new JButton("MODIFICAR");
+		modificar.setActionCommand("modificar");
 
 		add(nombre).setBounds(20, 220, 120, 50);
 		add(nombre_).setBounds(180, 230, 230, 30);
@@ -139,7 +136,7 @@ public class VentanaAgregar extends JFrame {
 		add(correo_).setBounds(180, 490, 230, 30);
 		add(direccion).setBounds(20, 530, 200, 50);
 		add(direccion_).setBounds(180, 540, 230, 30);
-		add(agregar).setBounds(160, 635, 130, 30);
+		add(modificar).setBounds(160, 635, 130, 30);
 		add(fondo_).setBounds(0, 0, 450, 720);
 
 		setVisible(false);
@@ -242,12 +239,12 @@ public class VentanaAgregar extends JFrame {
 		this.correo_ = correo_;
 	}
 
-	public JButton getAgregar() {
-		return agregar;
+	public JButton getmodificar() {
+		return modificar;
 	}
 
-	public void setAgregar(JButton agregar) {
-		this.agregar = agregar;
+	public void setmodificar(JButton modificar) {
+		this.modificar = modificar;
 	}
 
 	public JLabel getFondo_() {
@@ -353,5 +350,7 @@ public class VentanaAgregar extends JFrame {
 	public void setDireccion_(JTextField direccion_) {
 		this.direccion_ = direccion_;
 	}
+
+
 
 }
