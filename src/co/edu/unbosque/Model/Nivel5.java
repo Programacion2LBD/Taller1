@@ -11,7 +11,6 @@ public class Nivel5 extends IngenieroJunior implements Serializable {
 			String direccion, int añoIngreso) {
 		super(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso);
 
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

@@ -62,7 +62,6 @@ public class View extends JFrame implements ActionListener {
 			vm.setVisible(true);
 
 		}
-
 	}
 
 	public PanelLista getPl() {

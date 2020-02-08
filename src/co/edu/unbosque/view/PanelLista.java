@@ -35,5 +35,4 @@ public class PanelLista extends JPanel {
 	public DefaultListModel<String> getModeloLista() {
 		return modeloLista;
 	}
-
 }
