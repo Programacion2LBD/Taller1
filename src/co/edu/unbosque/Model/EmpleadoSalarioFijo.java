@@ -10,7 +10,8 @@ public abstract class EmpleadoSalarioFijo extends Empleado implements Serializab
 	static final int salarioBase=3500000;
 	int añoDeTrabajo;
 	/**
-	 * 
+	 * crea un objeto de tipo empleado con los siguentes parametros la cual extiende de la clase empleado.
+
 	 * @param nombre
 	 * @param apellido
 	 * @param cedula
@@ -29,21 +30,21 @@ public abstract class EmpleadoSalarioFijo extends Empleado implements Serializab
 		this.añoDeTrabajo = Integer.parseInt(Year.parse("2020").minusYears(añoIngreso).toString());
 
 	}
+	/**
+	 * Este metodo abstracto que calcula el salario de un empleado 
+	 * <b>pre</b> calcular salario del empleado 
+	 * <b>post</b> se actualizo el salario del empleado 
+	 * @return
+	 */
 	
 	public abstract double calcularSalario();
 	
 	
 	
-		
-	
-
 	/**
-	 * 
-	 */
-	
-	
-	/**
-	 * 
+	 *  este metodo accede al atributo año de trabajo que lleva el empleado 
+	 *  <b>pre</b> el año de trabajo  es mayor a 0
+	 * <b>post</b> se recibio el año de trabajo .
 	 * @return
 	 */
 	
@@ -51,8 +52,11 @@ public abstract class EmpleadoSalarioFijo extends Empleado implements Serializab
 		return añoDeTrabajo;
 	}
 	/**
-	 * 
-	 * @param añoDeTrabajo
+	 * este metodo accede al atributo año de trabajo que lleva el empleado 
+	 *  <b>pre</b> el año de trabajo  es mayor o igual a 0
+	 * <b>post</b> se modifico el año de trabajo .
+	 * @param añoDeTrabajo  es el numero de años que el empleado lleva en la empresa. != null, nVentas !" ".
+
 	 */
 	public void setAñoDeTrabajo(int añoDeTrabajo) {
 		this.añoDeTrabajo = añoDeTrabajo;
@@ -66,7 +70,9 @@ public abstract class EmpleadoSalarioFijo extends Empleado implements Serializab
 	}
 	@Override
 	public String toString() {
-		return "EmpleadoSalarioFijo [salarioBase=" + salarioBase + ", añoDeTrabajo=" + añoDeTrabajo + "]";
+		return "EmpleadoSalarioFijo \nnombre:" + getNombre()+ ", \napellido:" + getApellido() +", \ncedula:" + getCedula() + ", \ngenero:" + getGenero() + 
+				", \ntelefono:" + getTelefono() + ",\ncorreoElectronico:" + getCorreoElectronico() + ", \ndireccion:" + getDireccion() + 
+				",\nañoIngreso:" + getAñoIngreso() + ",\nsalarioBase:" + salarioBase + ", \nañoDeTrabajo:" + añoDeTrabajo + "]";
 	}
 	
 
