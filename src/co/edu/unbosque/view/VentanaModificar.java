@@ -3,6 +3,8 @@ package co.edu.unbosque.View;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -13,11 +15,16 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class VentanaModificar extends JFrame{
+import co.edu.unbosque.Controller.Controlador;
+
+public class VentanaModificar extends JFrame implements ActionListener{
 	private JButton modificar;
 
 	private ImageIcon fondo;
 	private JLabel fondo_;
+	
+	private ImageIcon imagen;
+	private JLabel imagen_;
 
 	private JLabel fechaIngreso;
 	private JTextField fecha_ingreso;
@@ -47,8 +54,10 @@ public class VentanaModificar extends JFrame{
 
 	private JLabel direccion;
 	private JTextField direccion_;
+    private Controlador c;
 
-	public VentanaModificar() {
+	public VentanaModificar(Controlador c) {
+		this.c = c;
 		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/logo.png")).getImage());
 		setTitle("MODIFICAR EMPLEADO");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -63,6 +72,10 @@ public class VentanaModificar extends JFrame{
 		fondo = new ImageIcon(getClass().getResource("/Imagenes/fondo.png"));
 		ImageIcon newImage = new ImageIcon(fondo.getImage().getScaledInstance(450, 700, Image.SCALE_SMOOTH));
 		fondo_ = new JLabel(newImage);
+		
+		imagen = new ImageIcon(getClass().getResource("/Imagenes/modificarempleado.png"));
+		ImageIcon newImagen = new ImageIcon(imagen.getImage().getScaledInstance(430, 200, Image.SCALE_SMOOTH));
+		imagen_ = new JLabel(newImagen);
 
 		nombre = new JLabel("NOMBRES:");
 		nombre.setFont(fuente);
@@ -137,6 +150,7 @@ public class VentanaModificar extends JFrame{
 		add(direccion).setBounds(20, 530, 200, 50);
 		add(direccion_).setBounds(180, 540, 230, 30);
 		add(modificar).setBounds(160, 635, 130, 30);
+		add(imagen_).setBounds(10, 10, 425, 200);
 		add(fondo_).setBounds(0, 0, 450, 720);
 
 		setVisible(false);
@@ -349,6 +363,21 @@ public class VentanaModificar extends JFrame{
 
 	public void setDireccion_(JTextField direccion_) {
 		this.direccion_ = direccion_;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String comando = e.getActionCommand();
+		
+		if (comando.equals("modificar")) {
+			
+			
+			if (c.modificarEmpleado(nombre_.getText(), apellidos_.getText() , iden_.getText(), genero.getText().charAt(0) , Long.parseLong(telefono_.getText()) , correo_.getText() , direccion_.getText(), Integer.parseInt(fecha_ingreso.getText())  )) {
+				
+			}
+			
+		}
+		
 	}
 
 
