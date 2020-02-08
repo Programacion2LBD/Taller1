@@ -87,9 +87,9 @@ public class EmpleadoaComision extends Empleado implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "EmpleadoaComision  \nnombre:" + getNombre() + ", \napellido:" + getApellido() + ", \ncedula:" + getCedula() + ", \ngenero:" + getGenero() + 
-				" \ntelefono:" + getTelefono() + ", \ncorreoElectronico:" + getCorreoElectronico() + ", \ndireccion:" + getDireccion() + 
-				"				, \nañoIngreso:" + getAñoIngreso() + "\nventas=" + nventas + ", \nminimo=" + minimo + "]";
+		return "Empleado Comision  \nNombre: " + getNombre() + " \nApellido: " + getApellido() + " \nCedula: " + getCedula() + " \nGenero: " + getGenero() + 
+				" \nTelefono: " + getTelefono() + " \nCorreo Electronico: " + getCorreoElectronico() + " \nDireccion: " + getDireccion() + 
+				"				 \nAñoIngreso: " + getAñoIngreso() + "\nVentas: " + nventas + "\nMinimo " + minimo  ;
 	}
 
 	

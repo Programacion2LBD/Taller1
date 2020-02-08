@@ -19,4 +19,21 @@ public class PanelTitulo extends JPanel {
 		setVisible(true);
 
 	}
+
+	public ImageIcon getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(ImageIcon titulo) {
+		this.titulo = titulo;
+	}
+
+	public JLabel getLogoJLabel() {
+		return logoJLabel;
+	}
+
+	public void setLogoJLabel(JLabel logoJLabel) {
+		this.logoJLabel = logoJLabel;
+	}
+
 }

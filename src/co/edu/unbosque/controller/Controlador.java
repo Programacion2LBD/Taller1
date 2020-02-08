@@ -1,5 +1,10 @@
 package co.edu.unbosque.Controller;
 
+import java.awt.Image;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import co.edu.unbosque.Model.*;
@@ -10,6 +15,7 @@ public class Controlador {
 
   private View v;
   private Empresa e;
+  Icon icono = new ImageIcon(getClass().getResource("/Imagenes/logo.png"));
 
   public Controlador(){
     e = new Empresa();
@@ -70,7 +76,7 @@ public class Controlador {
       v.getPl().getListaPersonal().setModel(v.getPl().getModeloLista());
       return true;
     } else {
-    	JOptionPane.showMessageDialog(v.getVa(), "Ya existe un empleado con esa cedula");
+    	JOptionPane.showMessageDialog(v.getVa(), "YA EXISTE UN EMPLEADO CON ESA CEDULA","EMPLEADO" , JOptionPane.WARNING_MESSAGE, icono);
     	return false;
     }
 

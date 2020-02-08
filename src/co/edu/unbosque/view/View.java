@@ -76,8 +76,6 @@ public class View extends JFrame implements ActionListener, ListSelectionListene
 		int opcion;
 		if (e.getActionCommand().equals("AGREGAR")) {
 			vfc.setVisible(true);
-			
-			va.setVisible(true);
 			va.getNombre_().setText("");
 			va.getApellidos_().setText("");
 			va.getiden_().setText("");

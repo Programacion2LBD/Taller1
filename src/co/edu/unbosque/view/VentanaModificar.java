@@ -82,7 +82,7 @@ public class VentanaModificar extends JFrame implements ActionListener{
 		nombre_ = new JTextField();
 		nombre_.setHorizontalAlignment(SwingConstants.CENTER);
 
-		apellidos = new JLabel("APELLIDO:");
+		apellidos = new JLabel("APELLIDOS:");
 		apellidos.setFont(fuente);
 		apellidos_ = new JTextField();
 		apellidos_.setHorizontalAlignment(SwingConstants.CENTER);
