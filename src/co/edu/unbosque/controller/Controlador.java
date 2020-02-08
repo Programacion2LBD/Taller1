@@ -1,5 +1,10 @@
 package co.edu.unbosque.Controller;
 
+import java.awt.Image;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import co.edu.unbosque.Model.*;
@@ -10,6 +15,7 @@ public class Controlador {
 
   private View v;
   private Empresa e;
+  Icon icono = new ImageIcon(getClass().getResource("/Imagenes/logo.png"));
 
   public Controlador(){
     e = new Empresa();
@@ -63,14 +69,21 @@ public class Controlador {
         case 6: emp = new Nivel4(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso); break;
         case 7: emp = new Nivel5(nombre, apellido, cedula, genero, telefono, correoElectronico, direccion, añoIngreso); break;
       }
-      e.getListaEmpleados().add(emp);
-      File.escribiraArchivo(e.getListaEmpleados());
-      System.out.println("Empleado Creado");
-      v.getPl().getModeloLista().addElement(cedula);
-      v.getPl().getListaPersonal().setModel(v.getPl().getModeloLista());
-      return true;
+      try{
+        emp.verificarInvariante();
+        e.getListaEmpleados().add(emp);
+        File.escribiraArchivo(e.getListaEmpleados());
+        System.out.println("Empleado Creado");
+
+        v.getPl().getModeloLista().addElement(cedula);
+        v.getPl().getListaPersonal().setModel(v.getPl().getModeloLista());
+        return true;
+      } catch (Exception e){
+        JOptionPane.showMessageDialog(null, e.getMessage());
+        return false;
+      }
     } else {
-    	JOptionPane.showMessageDialog(v.getVa(), "Ya existe un empleado con esa cedula");
+    	JOptionPane.showMessageDialog(v.getVa(), "YA EXISTE UN EMPLEADO CON ESA CEDULA","EMPLEADO" , JOptionPane.WARNING_MESSAGE, icono);
     	return false;
     }
 
@@ -99,7 +112,9 @@ public class Controlador {
       e.getListaEmpleados().get(pos).setCorreoElectronico(correoElectronico);
       e.getListaEmpleados().get(pos).setDireccion(direccion);
       e.getListaEmpleados().get(pos).setAñoIngreso(añoIngreso);
+      v.getPi().getInformacion().setText(leerEmpleado(v.getPl().getListaPersonal().getSelectedValue()).toString());
       return true;
     }
   }
+
 }

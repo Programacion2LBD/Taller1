@@ -6,14 +6,7 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 
 import co.edu.unbosque.Controller.Controlador;
 
@@ -22,6 +15,9 @@ public class VentanaModificar extends JFrame implements ActionListener{
 
 	private ImageIcon fondo;
 	private JLabel fondo_;
+	
+	private ImageIcon imagen;
+	private JLabel imagen_;
 
 	private JLabel fechaIngreso;
 	private JTextField fecha_ingreso;
@@ -51,7 +47,7 @@ public class VentanaModificar extends JFrame implements ActionListener{
 
 	private JLabel direccion;
 	private JTextField direccion_;
-    private Controlador c;
+	private Controlador c;
 
 	public VentanaModificar(Controlador c) {
 		this.c = c;
@@ -69,13 +65,17 @@ public class VentanaModificar extends JFrame implements ActionListener{
 		fondo = new ImageIcon(getClass().getResource("/Imagenes/fondo.png"));
 		ImageIcon newImage = new ImageIcon(fondo.getImage().getScaledInstance(450, 700, Image.SCALE_SMOOTH));
 		fondo_ = new JLabel(newImage);
+		
+		imagen = new ImageIcon(getClass().getResource("/Imagenes/modificarempleado.png"));
+		ImageIcon newImagen = new ImageIcon(imagen.getImage().getScaledInstance(430, 200, Image.SCALE_SMOOTH));
+		imagen_ = new JLabel(newImagen);
 
 		nombre = new JLabel("NOMBRES:");
 		nombre.setFont(fuente);
 		nombre_ = new JTextField();
 		nombre_.setHorizontalAlignment(SwingConstants.CENTER);
 
-		apellidos = new JLabel("APELLIDO:");
+		apellidos = new JLabel("APELLIDOS:");
 		apellidos.setFont(fuente);
 		apellidos_ = new JTextField();
 		apellidos_.setHorizontalAlignment(SwingConstants.CENTER);
@@ -91,9 +91,11 @@ public class VentanaModificar extends JFrame implements ActionListener{
 		mujer = new JLabel("MUJER");
 		mujer.setFont(fuente);
 		mujer_ = new JRadioButton();
+		mujer_.setActionCommand("Mujer");
 		hombre = new JLabel("HOMBRE");
 		hombre.setFont(fuente);
 		hombre_ = new JRadioButton();
+		hombre_.setActionCommand("Hombre");
 		generosSeleccion.add(hombre_);
 		generosSeleccion.add(mujer_);
 
@@ -121,6 +123,7 @@ public class VentanaModificar extends JFrame implements ActionListener{
 
 		modificar = new JButton("MODIFICAR");
 		modificar.setActionCommand("modificar");
+		modificar.addActionListener(this);
 
 		add(nombre).setBounds(20, 220, 120, 50);
 		add(nombre_).setBounds(180, 230, 230, 30);
@@ -143,6 +146,7 @@ public class VentanaModificar extends JFrame implements ActionListener{
 		add(direccion).setBounds(20, 530, 200, 50);
 		add(direccion_).setBounds(180, 540, 230, 30);
 		add(modificar).setBounds(160, 635, 130, 30);
+		add(imagen_).setBounds(10, 10, 425, 200);
 		add(fondo_).setBounds(0, 0, 450, 720);
 
 		setVisible(false);
@@ -362,10 +366,25 @@ public class VentanaModificar extends JFrame implements ActionListener{
 		String comando = e.getActionCommand();
 		
 		if (comando.equals("modificar")) {
+			char genero = generosSeleccion.
+				getSelection().
+				getActionCommand().
+				equals("Hombre")? 'H':'M';
 			
-			
-			if (c.modificarEmpleado(nombre_.getText(), apellidos_.getText() , iden_.getText(), genero.getText().charAt(0) , Long.parseLong(telefono_.getText()) , correo_.getText() , direccion_.getText(), Integer.parseInt(fecha_ingreso.getText())  )) {
-				
+			if (
+				c.modificarEmpleado(
+					nombre_.getText(),
+					apellidos_.getText() ,
+					iden_.getText(),
+					genero ,
+					Long.parseLong(telefono_.getText()) ,
+					correo_.getText() ,
+					direccion_.getText(),
+					Integer.parseInt(fecha_ingreso.getText()))) {
+
+				setVisible(false);
+			} else{
+				JOptionPane.showMessageDialog(this, "Por favor verifica los datos ingresados");
 			}
 			
 		}

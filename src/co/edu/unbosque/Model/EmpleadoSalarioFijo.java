@@ -72,9 +72,9 @@ public abstract class EmpleadoSalarioFijo extends Empleado implements Serializab
 	}
 	@Override
 	public String toString() {
-		return "EmpleadoSalarioFijo \nnombre:" + getNombre()+ ", \napellido:" + getApellido() +", \ncedula:" + getCedula() + ", \ngenero:" + getGenero() + 
-				", \ntelefono:" + getTelefono() + ",\ncorreoElectronico:" + getCorreoElectronico() + ", \ndireccion:" + getDireccion() + 
-				",\nañoIngreso:" + getAñoIngreso() + ",\nsalarioBase:" + salarioBase + ", \nañoDeTrabajo:" + añoDeTrabajo + "]";
+		return "Empleado Salario Fijo \nNombre: " + getNombre()+ " \nApellido: " + getApellido() +" \nCedula: " + getCedula() + "\nGenero: " + getGenero() + 
+				" \nTelefono: " + getTelefono() + "\nCorreo Electronico: " + getCorreoElectronico() + " \nDireccion: " + getDireccion() + 
+				"\n Año Ingreso: " + getAñoIngreso() +"Salario: "+ getSalario() +"\nSalario Base: " + salarioBase + " \nAño De Trabajo: " + añoDeTrabajo ;
 	}
 	
 

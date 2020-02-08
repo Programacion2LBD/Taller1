@@ -39,12 +39,6 @@ public abstract class Empleado implements Serializable {
 		this.direccion = direccion;
 		this.añoIngreso = añoIngreso;
 		salario = calcularSalario();
-
-		try{
-			verificarInvariante();
-		} catch (AssertionError e){
-			JOptionPane.showMessageDialog(null, e.getMessage());
-		}
 		
 	}
 	/**
@@ -55,15 +49,17 @@ public abstract class Empleado implements Serializable {
 	 */
 	public abstract double calcularSalario();
 
-	public void verificarInvariante(){
-		assert (nombre!=null): "Por favor ingrese un nombre";
-		assert (apellido!=null): "Por favor ingrese un apellido";
-		assert (cedula!= null): "Por favor ingrese una cedula";
-		assert (genero!=' '):"Por favor seleccione un genero";
-		assert (telefono>Long.parseLong("3000000000")): "Por favor ingrese un numero valido";
-		assert (correoElectronico.contains("@")): "El correo debe contener un arroba";
-		assert (direccion!=null):"Por favor ingrese una direcicon";
-		assert (añoIngreso>1950 && añoIngreso< 2020): "El año de ingreso debe ser mayor a 1950 y menor a 2020";
+	public void verificarInvariante() throws Exception{
+		if (!(nombre!=null && nombre.length()>=2)) throw new Exception( "Por favor ingrese un nombre valido");
+		if (!(apellido!=null && apellido.length()>=2)) throw new Exception( "Por favor ingrese un apellido valido");
+		if (!(cedula!= null && cedula.length()>2)) throw new Exception("Por favor ingrese una cedula valida");
+		if (!(genero!=' ')) throw new Exception("Por favor seleccione un genero");
+		if (!(telefono>=Long.parseLong("3000000000"))) throw new Exception( "Por favor ingrese un numero de celular valido en Colombia");
+		if (!(correoElectronico.contains("@"))) throw new Exception("El correo electronico debe contener un arroba");
+		if (!(correoElectronico.length()>=3)) throw new Exception( "Por favor ingrese un correo electronico valido");
+		if (!(direccion!=null && direccion.length()>2)) throw  new Exception("Por favor ingrese una direccion");
+		if (!(añoIngreso>=1950 && añoIngreso<= 2020)) throw new Exception( "El año de ingreso debe ser mayor a 1950 y menor a 2020");
+
 	}
 
 	/**
@@ -179,7 +175,7 @@ public abstract class Empleado implements Serializable {
 	 *  este metodo accede al atributo correoelectronico del empleado para modificarlo
 	 * <b>pre</b> modificar el correoelectronico del empleado 
 	 * <b>post</b> actualizar el correoelectronico  del empleado .
-	 * @param correoelectronico es el  correoelectronico  del nuevo empleado.correoelectronico != null, correoelectronico !" ".
+	 * @param correoElectronico es el  correoelectronico  del nuevo empleado.correoelectronico != null, correoelectronico !" ".
 	 */
 
 	public void setCorreoElectronico(String correoElectronico) {
@@ -226,17 +222,24 @@ public abstract class Empleado implements Serializable {
 	public void setAñoIngreso(int añoIngreso) {
 		this.añoIngreso = añoIngreso;
 	}
+	
+
+	public double getSalario() {
+		return salario;
+	}
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
 	/**
 	 * metodo para mostrar informacion
 	 */
-
-
 	@Override
 	public String toString() {
 		return "Empleado \nnombre:" + nombre + ", \napellido:" + apellido + ", \ncedula:" + cedula + ", \ngenero:" + genero
 				+ ", \ntelefono:" + telefono + ", \ncorreoElectronico:" + correoElectronico + ", \ndireccion:" + direccion
 				+ ", \nañoIngreso:" + añoIngreso + "";
 	}
+	
 	
 	
 	

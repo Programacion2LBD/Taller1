@@ -5,37 +5,47 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class VentanaFijoComision extends JFrame implements ActionListener {
+public class VentanaFijoComision extends JFrame {
 
-  private JButton botonComision;
-  private JButton botonFijo;
-  private JLabel titulo;
-  private JPanel botones;
+	private JButton botonComision;
+	private JButton botonFijo;
+	private JLabel titulo;
+	private ImageIcon fondo;
+	private JLabel fondo_;
 
-  public VentanaFijoComision(ActionListener action)  {
-    titulo = new JLabel("ELIGE EL TIPO DE SALARIO DEL EMPLEADO");
-    botonComision = new JButton("A COMISION");
-    botonComision.addActionListener(action);
-    botonFijo = new JButton("SALARIO FIJO");
-    botonFijo.addActionListener(action);
-    botones = new JPanel();
+	public VentanaFijoComision(ActionListener action) {
 
-    botones.setLayout(new GridLayout(1,2));
-    setLayout(null);
-    setSize(510, 300);
+		setIconImage(new ImageIcon(getClass().getResource("/Imagenes/logo.png")).getImage());
+		setTitle("PAGO DE EMPLEADO");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		getContentPane().setBackground(Color.white);
+		setResizable(false);
+		setLayout(null);
+		setSize(480, 280);
+		setLayout(null);
+		setLocationRelativeTo(null);
 
-    add(titulo);
-    titulo.setBounds(150,0,510,50);
-    botones.add(botonComision);
-    botones.add(botonFijo);
-    add(botones);
-    botones.setBounds(0,50,510,220);
-    setLocationRelativeTo(null);
-  }
+		Font fuente = new Font("Tahoma", 1, 16);
 
-  @Override
-  public void actionPerformed(ActionEvent e) {
+		fondo = new ImageIcon(getClass().getResource("/Imagenes/fondo.png"));
+		ImageIcon newImage = new ImageIcon(fondo.getImage().getScaledInstance(480, 300, Image.SCALE_SMOOTH));
+		fondo_ = new JLabel(newImage);
 
-  }
+		titulo = new JLabel("ELIGE EL TIPO DE SALARIO DEL EMPLEADO");
+		titulo.setFont(fuente);
+		botonComision = new JButton("COMISION");
+		botonComision.addActionListener(action);
+		botonComision.setFont(fuente);
+		botonComision.setBorderPainted(false);
+		botonFijo = new JButton("SALARIO FIJO");
+		botonFijo.addActionListener(action);
+		botonFijo.setFont(fuente);
+		botonFijo.setBorderPainted(false);
+
+		add(titulo).setBounds(70, 0, 510, 100);
+		add(botonComision).setBounds(60, 100, 150, 90);
+		add(botonFijo).setBounds(270, 100, 150, 90);
+		add(fondo_).setBounds(0, 0, 480, 300);
+	}
 
 }

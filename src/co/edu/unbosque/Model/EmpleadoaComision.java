@@ -2,6 +2,7 @@ package co.edu.unbosque.Model;
 
 
 import java.io.Serializable;
+import java.util.Random;
 
 public class EmpleadoaComision extends Empleado implements Serializable {
 	/**
@@ -9,7 +10,7 @@ public class EmpleadoaComision extends Empleado implements Serializable {
 	 */
 	private int nventas;
 	private static final int salarioBase = 1100000;
-	int minimo=800000;
+	private static final int minimo=800000;
 	/**
 	 * crea un objeto de tipo empleado con los siguentes parametros la cual extiende de la clase empleado.
 	 * @param nombre
@@ -43,24 +44,24 @@ public class EmpleadoaComision extends Empleado implements Serializable {
 	@Override
 	public double calcularSalario() {
 		double salarioaComision= salarioBase;
-		if(nventas >=1) {
-			salarioaComision = salarioaComision + minimo;
+		int suma = 0;
+		Random r = new Random(System.nanoTime());
+		for (int i = 0; i<nventas;i++){
+			int valor;
+			do {
+				valor=r.nextInt(2000000);
+			} while (valor<500000);
+			suma+=valor;
 		}
-			
-			else if (nventas<=0) {
+
+		if(nventas >=1 && suma<=minimo) {
+			salarioaComision = salarioaComision + minimo;
+		} else if(suma>minimo){
+			salarioaComision = salarioaComision + suma;
+		}	else if (nventas<=0) {
 				salarioaComision = salarioaComision;
 		}
-		
-		
-		
-		
 		return salarioaComision;
-		
-
-			
-		
-
-		
 	}
 
 
@@ -78,7 +79,7 @@ public class EmpleadoaComision extends Empleado implements Serializable {
 	 * este metodo accede al atributo numero de ventas que realiza el empleado 
 	 *  <b>pre</b> el numero de ventas es mayor o igual a 0
 	 * <b>post</b> se modifica el numero de ventas .
-	 * @param nVentas es el numero de ventas del nuevo empleado.nVentas != null, nVentas !" ".
+	 * @param nventas es el numero de ventas del nuevo empleado.nVentas != null, nVentas !" ".
 	 */
 
 
@@ -87,9 +88,9 @@ public class EmpleadoaComision extends Empleado implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "EmpleadoaComision  \nnombre:" + getNombre() + ", \napellido:" + getApellido() + ", \ncedula:" + getCedula() + ", \ngenero:" + getGenero() + 
-				" \ntelefono:" + getTelefono() + ", \ncorreoElectronico:" + getCorreoElectronico() + ", \ndireccion:" + getDireccion() + 
-				"				, \nañoIngreso:" + getAñoIngreso() + "\nventas=" + nventas + ", \nminimo=" + minimo + "]";
+		return "Empleado Comision  \nNombre: " + getNombre() + " \nApellido: " + getApellido() + " \nCedula: " + getCedula() + " \nGenero: " + getGenero() + 
+				" \nTelefono: " + getTelefono() + " \nCorreo Electronico: " + getCorreoElectronico() + " \nDireccion: " + getDireccion() + 
+				"				 \nAñoIngreso: " + getAñoIngreso() + "\nVentas: " + nventas + "\nSalario" + getSalario()  ;
 	}
 
 	

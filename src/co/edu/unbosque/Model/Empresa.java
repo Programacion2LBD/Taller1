@@ -39,8 +39,8 @@ public class Empresa {
 	 * @param empleado. un objeto de tipo empleado.
 	 
    */
+	public void setListaEmpleados(ArrayList<Empleado> listaEmpleados) {
+		this.listaEmpleados = listaEmpleados;
+	}
 
-  public void setListaEmpleados(ArrayList<Empleado> listaEmpleados) {
-    this.listaEmpleados = listaEmpleados;
-  }
 }
