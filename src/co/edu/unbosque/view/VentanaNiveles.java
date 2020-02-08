@@ -16,14 +16,18 @@ public class VentanaNiveles extends JFrame implements ActionListener {
   private JLabel titulo;
   private JPanel botones;
 
-  public VentanaNiveles()  {
+  public VentanaNiveles(ActionListener action)  {
     titulo = new JLabel("ELIGE EL NIVEL DEL INGENIERO JUNIOR");
     boton1 = new JButton("NIVEL 1");
+    boton1.addActionListener(action);
     boton2 = new JButton("NIVEL 2");
+    boton2.addActionListener(action);
     boton3 = new JButton("NIVEL 3");
+    boton3.addActionListener(action);
     boton4 = new JButton("NIVEL 4");
+    boton4.addActionListener(action);
     boton5 = new JButton("NIVEL 5");
-
+    boton5.addActionListener(action);
     botones = new JPanel();
 
     botones.setLayout(new GridLayout(1,5));

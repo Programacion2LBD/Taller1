@@ -7,23 +7,32 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 public class PanelBotones extends JPanel {
-	JButton agregar;
-	JButton agregarventa;
-	JButton aumentar;
+	private JButton agregar;
+	private JButton agregarventa;
+	private JButton aumentar;
 
 	public PanelBotones() {
 		setLayout(null);
 		setBorder(new CompoundBorder(new EmptyBorder(5, 5, 5, 5), new TitledBorder("BOTONES:")));
 		agregar = new JButton("AGREGAR");
-		agregar.setActionCommand("agregar");
 		agregarventa = new JButton("AGREGAR VENTA");
-		agregarventa.setActionCommand("agregarv");
 		aumentar = new JButton("AUMENTAR SALARIO");
-		aumentar.setActionCommand("aumentars");
 
 		add(agregar).setBounds(50, 30, 170, 50);
 		add(agregarventa).setBounds(250, 30, 170, 50);
 		add(aumentar).setBounds(450, 30, 170, 50);
+	}
+
+	public JButton getAgregar() {
+		return agregar;
+	}
+
+	public JButton getAgregarventa() {
+		return agregarventa;
+	}
+
+	public JButton getAumentar() {
+		return aumentar;
 	}
 
 }

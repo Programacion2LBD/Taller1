@@ -1,5 +1,7 @@
 package co.edu.unbosque.Controller;
 
+import javax.swing.JOptionPane;
+
 import co.edu.unbosque.Model.*;
 import co.edu.unbosque.Persistence.File;
 import co.edu.unbosque.View.View;
@@ -11,7 +13,7 @@ public class Controlador {
 
   public Controlador(){
     e = new Empresa();
-    v = new View();
+    v = new View(this);
     for (Empleado e : e.getListaEmpleados()){
       v.getPl().getModeloLista().addElement(e.getCedula());
     }
@@ -23,6 +25,10 @@ public class Controlador {
       if (e.getListaEmpleados().get(i).getCedula().equals(cedula)) return i;
     }
     return -1;
+  }
+  
+  public Empleado leerEmpleado(String cedula) {
+	  return e.getListaEmpleados().get(buscarEmpleado(cedula));
   }
 
   /**
@@ -59,9 +65,13 @@ public class Controlador {
       }
       e.getListaEmpleados().add(emp);
       File.escribiraArchivo(e.getListaEmpleados());
+      System.out.println("Empleado Creado");
+      v.getPl().getModeloLista().addElement(cedula);
+      v.getPl().getListaPersonal().setModel(v.getPl().getModeloLista());
       return true;
     } else {
-      return false;
+    	JOptionPane.showMessageDialog(v.getVa(), "Ya existe un empleado con esa cedula");
+    	return false;
     }
 
   }
@@ -72,6 +82,7 @@ public class Controlador {
       return false;
     } else {
       e.getListaEmpleados().remove(pos);
+      File.escribiraArchivo(e.getListaEmpleados());
       return true;
     }
   }
